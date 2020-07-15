@@ -1,0 +1,28 @@
+﻿body {
+	background-color: bittersweet;
+}
+.soaf1 {
+	font-family: 'Oswald', sans-serif;
+}
+.soaf2 {
+	font-family: 'Monteserrat', sans-serif;
+}
+.btnWide {
+	width: 100%;
+	margin-top: 20px;
+	border: 1px solid #102542;
+}
+.btnWide:hover {
+	background-color: #18191D;
+}
+.rowWide {
+	width: 100%;
+}
+.numInput {
+	background-color: #cdd7d6ad;
+	border: 1px solid #102542;
+}
+.kInput {
+	background-color: #F8706063;
+	border: 1px solid #102542;
+}

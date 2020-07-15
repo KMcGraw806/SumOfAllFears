@@ -11,17 +11,13 @@
     <title>Coder Foundry MiniSite Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <style>
-        .btnWide {
-            width: 100%;
-            margin-top: 15px;
-        }
-        .inputText {
-            width: 100;
-        }
-    </style>     
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
@@ -32,7 +28,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-                <a class="navbar-brand" href="/Index.html">Taco Cat</a>
+                <a class="navbar-brand" href="/Index.html">Sum Of All Fears</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,19 +63,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="mt-5">Taco Cat</h1>
-                    <p class="lead">Enter a word, phrase, or number below and click the button to see if it is a palindrome</p>
-                    <ul class="list-unstyled">
-                        <li><input id="pal" type="text" placeholder="Enter your text"></li>
-                        <li><button id="palIn" class="btn-sm btn-primary">Test It!</button></li>
-                        <li><button id="palbtnClear" class="btn-sm btn-primary">Clear It!</button></li>
-                    </ul>
-                    <hr>
-                    <p id="step1"></p>
-                    <p id="step2"></p>
-                    <p id="step3"></p>
-                    <p id="step4"></p>
-                    <p id="palOut"></p>
+                    <h1 class="mt-5 soaf1">Sum Of All Fears</h1>
+                    <p class="lead soaf2">Enter a word, phrase, or number below and click the button to see if it is a palindrome</p>
+					<hr />
+					<div class="row rowWide">
+						<div class="col"><input class="form-control kInput"   id="sumk" type="number" placeholder="Enter K" /></div>
+						<div class="col"><input class="form-control numInput" id="sum1" type="number" placeholder="Enter Number 1" /></div>
+						<div class="col"><input class="form-control numInput" id="sum2" type="number" placeholder="Enter Number 2" /></div>
+						<div class="col"><input class="form-control numInput" id="sum3" type="number" placeholder="Enter Number 3" /></div>
+						<div class="col"><input class="form-control numInput" id="sum4" type="number" placeholder="Enter Number 4" /></div>
+						<div class="col"><input class="form-control numInput" id="sum5" type="number" placeholder="Enter Number 5" /></div>
+                    </div>
+					<hr />
+					<div class="row">
+						<div class="col"><button id="btnSum" class="btn btnWide btn-primary"> Do We Have A Match??</button></div>
+                    </div>
+					<hr />
+					<div class="row">
+						<div class="col"><p id="txtOutput"></p></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,31 +93,41 @@
 
     <script>
         
-        $("#palIn").click(function () {
-let inputWord = $("#pal").val()
-$("#step1").text(`Your text was ${inputWord}`);
-if (inputWord.length < 2) { alert("Please use two or more characters") } else {
-let word = inputWord.toLowerCase().replace(/\s|\'|\"/g, '');
-$("#step2").text(`After clean up that becomes ${word}`);
-let reversedInput = inputWord.split('').reverse().join('');
-$("#step3").text(`Your text reversed is ${reversedInput}`);
-let revword = reversedInput.toLowerCase().replace(/\s|\'|\"/g, '');
-$("#step4").text(`After clean up that becomes ${revword}`);
-let message = `Your input was: ${inputWord}. Reversed is ${reversedInput}.`;
-let result = ""
-if (word == revword) {
-result = `That means ${inputWord} is a palindrome!`;
-} else {
-result = `That means ${inputWord} is not a plaindrome!`;
-};
-$("#palOut").text(message + " " + result);
-}
-});
-$("#palbtnClear").click(function () {
-$("#pal").val("");
-$("#palOut").text("");
-});
+        $("#btnSum").on("click", function() {
+            let k = parseInt($("#sumk").val());
+            let num1 = parseInt($("#sum1").val());
+            let num2 = parseInt($("#sum2").val());
+            let num3 = parseInt($("#sum3").val());
+            let num4 = parseInt($("#sum4").val());
+            let num5 = parseInt($("#sum5").val());
 
+            let array = [num1, num2, num3, num4, num5]; 
+            //array.push(num1);
+            //array.push(num2);
+            //array.push(num3);
+            //array.push(num4);
+            //array.push(num5);
+
+            let message = "";
+
+            for(let index = 0; index < array.length - 1; index++){
+                if (array[index] > k)
+                    continue;
+
+                let solution = k - array[index];
+                if (array.indexOf(solution, index + 1) > -1) {
+                    message = `A solution was found for the K value that you have input of ${k}`;
+                    break;
+                }
+                else {
+                    message = `I'm sorry, but no solution was found for the K value that you have input of ${k}`;
+                }
+
+                index++;
+            }
+
+            $("#txtOutput").text(message);
+        });
     </script>
 
 </body>
