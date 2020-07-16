@@ -1,28 +1,55 @@
-﻿body {
-	background-color: bittersweet;
+/*-- Use For Custom Styling --*/
+body {
 }
-.soaf1 {
-	font-family: 'Oswald', sans-serif;
-}
-.soaf2 {
-	font-family: 'Monteserrat', sans-serif;
-}
+
 .btnWide {
-	width: 100%;
-	margin-top: 20px;
-	border: 1px solid #102542;
+	width: 75%;
+	margin-top: 15px;
 }
-.btnWide:hover {
-	background-color: #18191D;
+
+.txtWide {
+	width: 75%;
 }
-.rowWide {
-	width: 100%;
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
 }
-.numInput {
-	background-color: #cdd7d6ad;
-	border: 1px solid #102542;
+
+.output {
+	font-size: 20px;
 }
-.kInput {
-	background-color: #F8706063;
-	border: 1px solid #102542;
+/*.nav-box-shadow {
+	-webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.15);
 }
+
+.nav-item {
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
+	height: 45.19px;
+}
+
+.navbar-brand {
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
+}
+
+.navbar.navbar-expand-lg.navbar-dark.static-top.nav-box-shadow {
+	height: 70px;
+}
+
+div#navbarResponsive.collapse.navbar-collapse {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+}
+
+a.nav-link.nav-color {
+	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
+	margin: 0px 4.8px;
+	padding-top: 9.6px;
+	padding-bottom: 9.6px;
+	padding-left: 20.8px;
+	padding-right: 20.8px;
+}*/
