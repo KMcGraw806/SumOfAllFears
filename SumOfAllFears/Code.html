@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Custom Style CSS File -->
     <link rel="stylesheet" href="css/custom.css">
-
+    <link href="css/prism (solarized light).css" rel="stylesheet" />
     <style>
         .title {
             font-weight: 300;
@@ -115,11 +115,11 @@
                 </nav>
 
                 <div class="side-footer text-white w-100">
-                    <ul class="social-icons-simple">
+                    <!--<ul class="social-icons-simple">
                         <li class="side-menu-icons"><a href="javascript:void(0)"><i class="fab fa-facebook-f color-white"></i> </a> </li>
                         <li class="side-menu-icons"><a href="javascript:void(0)"><i class="fab fa-instagram color-white"></i> </a> </li>
                         <li class="side-menu-icons"><a href="javascript:void(0)"><i class="fab fa-twitter color-white"></i> </a> </li>
-                    </ul>
+                    </ul>-->
                     <p class="text-white">&copy; 2020 Kayla McGraw</p>
                 </div>
             </div>
@@ -133,19 +133,50 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="mt-5">Sum Of All Fears</h1>
-                    <p class="lead">You can customize the template colors</p>
+                    <h1 class="mt-5 code-title">Sum Of All Fears</h1>
                     <ul class="list-unstyled">
-                        <li>This page is for a description of the Javascript exercise</li>
-                        <li>You should include information about what the code does</li>
+                        <li>If you would like to see how Sunset Hills works</li>
+                        <li>look no further than the block below!</li>
                     </ul>
                 </div>
+            </div>
+            <hr />
+            <div class="row">
+                <pre id="code-output" class="line-numbers language-javascript" data-src="/js/JavaScript.js">
+<code>let k = parseInt($("#sumk").val());
+let num1 = parseInt($("#sum1").val());
+let num2 = parseInt($("#sum2").val());
+let num3 = parseInt($("#sum3").val());
+let num4 = parseInt($("#sum4").val());
+let num5 = parseInt($("#sum5").val());
+
+let array = [num1, num2, num3, num4, num5];
+
+let message = "";
+
+for (let index = 0; index < array.length - 1; index++) {
+if (array[index] > k)
+continue;
+
+let solution = k - array[index];
+
+if (array.indexOf(solution, index + 1) > -1) {
+message = `A solution was found for the K value that you have input of ${k}`;
+break;
+}
+else {
+message = `I'm sorry, but no solution was found for the K value that you have input of ${k}`;
+}
+}
+
+$("#txtOutput").text(message);</code>
+                </pre>
             </div>
         </div>
     </section>
 
     <!-- Footer starts -->
-    <footer class="p-half bg-white fixed-bottom">
+    <!--<footer class="p-half bg-white fixed-bottom">
         <div class="container">
             <div class="row">
                 <div class="contact-info text-center">
@@ -164,7 +195,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>-->
     <!-- Footer ends -->
     <!--Animated Cursor-->
     <div id="animated-cursor">
@@ -200,7 +231,7 @@
     <!-- custom script -->
     <script src="js/contact_us.js"></script>
     <script src="js/script.js"></script>
-
+    <script src="js/prism (solarized light).js"></script>
 
 </body>
 </html>
