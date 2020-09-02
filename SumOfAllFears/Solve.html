@@ -162,7 +162,7 @@
                     </div>
                     <hr />
                     <div class="row">
-                        <div class="col"><p id="txtOutput"></p></div>
+                        <div class="col"><p id="txtOutput" class="results"></p></div>
                     </div>
                 </div>
             </div>
@@ -234,7 +234,12 @@
 			let num2 = parseInt($("#sum2").val());
 			let num3 = parseInt($("#sum3").val());
 			let num4 = parseInt($("#sum4").val());
-			let num5 = parseInt($("#sum5").val());
+            let num5 = parseInt($("#sum5").val());
+
+			if (sumk, sum1, sum2, sum3, sum4, sum5 === "") {
+				Swal.fire("Please enter a number.")
+				return
+            }
 
 			let array = [num1, num2, num3, num4, num5];
 
@@ -261,6 +266,9 @@
                 $("#sumk, #sum1, #sum2, #sum3, #sum4, #sum5").val('');
                 $("#txtOutput").html('');
             });
+
+			
+
         });
     </script>
 </body>
